@@ -13,6 +13,7 @@ let bot
 let label;
 let confidence;
 let timer;
+let cancel;
 
 function preload() {
 	// Initialize the Image Classifier method with MobileNet
@@ -31,11 +32,20 @@ function setup() {
 	let button = createButton('Start Again');
   button.position(windowWidth - 200, 0);
   button.mousePressed(() => {
+		button.style('display', 'none');
 		background(255);
 		timer = createElement('h1', 'Timer ⟶ 60');
 		timer.position(windowWidth - 300, 100);
+		cancel = createButton('Cancel');
+		cancel.position(windowWidth - 150, 0);
 		let timeLeft = 60
 		let countDown = window.setInterval(function(){
+			cancel.mousePressed(() => {
+				clearInterval(countDown);
+				timer.remove();
+				cancel.remove();
+				button.style('display', 'block');
+			});
 			// Show user the timer
 			timer.html('Timer ⟶ ' + timeLeft);
       timeLeft -= 1;
