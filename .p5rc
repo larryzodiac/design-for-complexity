@@ -1,7 +1,8 @@
 {
   "name": "design-for-complexity",
   "projects": [
-    "hangman",
-    "test"
+    "image-classification",
+    "pose-classification",
+    "pictionary"
   ]
 }

@@ -1,5 +1,5 @@
 /*
-	PLaying with poseNet to make a hangman game.
+	PLaying with poseNet.
 	https://github.com/ml5js/ml5-examples/blob/development/p5js/PoseNet/PoseNet_webcam/sketch.js
 	https://www.youtube.com/playlist?list=PLRqwX-V7Uu6YPSwT06y_AEYTqIwbeam3y
 */
@@ -43,6 +43,7 @@ function draw() {
 	// 	}
 	// }
 	drawKeypoints();
+	drawSkeleton();
 }
 
 // A function to draw ellipses over the detected keypoints
@@ -56,9 +57,9 @@ function drawKeypoints()  {
       let keypoint = pose.keypoints[j];
       // Only draw an ellipse is the pose probability is bigger than 0.2
       if (keypoint.score > 0.2) {
-        fill(255, 0, 0);
+        fill(0, 255, 0);
         noStroke();
-        ellipse(keypoint.position.x, keypoint.position.y, 10, 10);
+        ellipse(keypoint.position.x, keypoint.position.y, 15, 15);
       }
     }
   }
@@ -74,6 +75,7 @@ function drawSkeleton() {
       let partA = skeleton[j][0];
       let partB = skeleton[j][1];
       stroke(255, 0, 0);
+			strokeWeight(5);
       line(partA.position.x, partA.position.y, partB.position.x, partB.position.y);
     }
   }
