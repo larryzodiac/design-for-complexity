@@ -37,10 +37,38 @@ button {
   font-size: 14px;
   float: right;
   margin-top: 2rem;
+  font-size: 1.375rem;
 }
 
 button:hover {
   box-shadow: 2px 2px 0 #222;
+}
+
+.label {
+  display: inline-block;
+  font-weight: 700;
+  color: rgb(34, 34, 34);
+  background-color: #BCFCFF;
+  border-radius: 5px;
+  margin-right: 4px;
+  padding: 0.375em 0.5em 0.1875em;
+  line-height: 1.5;
+  font-size: 14px;
+  float: right;
+  margin-top: 2rem;
+  font-size: 1.375rem;
+  transform: rotate(1deg);
+  transition: 0.11s cubic-bezier(0.2, 0, 1, 0.9);
+  -webkit-animation-name:             rotate;
+  -webkit-animation-duration:         2.5s;
+  -webkit-animation-iteration-count:  infinite;
+  -webkit-animation-timing-function:  ease-in;
+}
+
+@-webkit-keyframes rotate {
+  from {-webkit-transform: rotate(1deg);}
+  50%  {-webkit-transform: rotate(-1deg);} /* ignored */
+  to   {-webkit-transform: rotate(1deg)}
 }
 
 .canvas {
