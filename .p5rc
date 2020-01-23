@@ -1,0 +1,7 @@
+{
+  "name": "design-for-complexity",
+  "projects": [
+    "hangman",
+    "test"
+  ]
+}
